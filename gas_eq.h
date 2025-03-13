@@ -3,8 +3,13 @@
 
 struct substance_state {
   char *substance;
+  float M_bar;
+  float R;
+  float R_bar;
   float temperature;
-  float cp0;
+  float cp;
+  float cv;
+  float k;
   float h0;
   float s0;
   float g0;
