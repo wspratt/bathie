@@ -110,7 +110,7 @@ struct substance_state * get_substance_state(char *substance, float temperature)
   ss->h0 = R_bar * temperature * (a_ptr[0] + a_ptr[1] * temperature / 2. + a_ptr[2] * pow(temperature, 2) / 3. + a_ptr[3] * pow(temperature, 3) / 4. + a_ptr[4] * pow(temperature, 4) / 5. + a_ptr[5] / temperature) / ss->M_bar;
   ss->s0 = R_bar * (a_ptr[0] * log(temperature) + a_ptr[1] * temperature + a_ptr[2] * pow(temperature, 2) / 2. + a_ptr[3]  * pow(temperature, 3) / 3. + a_ptr[4] * pow(temperature, 4) / 4. + a_ptr[6]) / ss->M_bar;
   ss->g0 = R_bar * temperature * (a_ptr[0] * (1 - log(temperature)) - a_ptr[1] * temperature / 2. - a_ptr[2] * pow(temperature, 2) / 6. - a_ptr[3] * pow(temperature, 3) / 12. - a_ptr[4] * pow(temperature, 4) / 20. + a_ptr[5] / temperature - a_ptr[6]) / ss->M_bar;
-  ss->Pr = exp(ss->s0 * / ss->R);
+  ss->Pr = exp(ss->s0 / ss->R);
 
   return ss;
 
